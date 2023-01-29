@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<Configurations>Release;Debug;Upload</Configurations>
+		<AssemblyName>$(MSBuildProjectName)-Workshop</AssemblyName>
+		<LangVersion>latest</LangVersion>
+		<NoWarn>CS0114</NoWarn>
+	</PropertyGroup>
+	
+	<!-- Absolute Path to PlateUp.exe   e.g: C:\\Program Files (x86)\\Steam\\SteamLibrary\\steamapps\\common\\PlateUp\\PlateUp -->
+	<PropertyGroup>
+		<PlateUpGameFolder>C:\Program Files (x86)\Steam\steamapps\common\PlateUp\PlateUp</PlateUpGameFolder>
+		<WorkshopDir>$(ProjectDir)content</WorkshopDir>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="content\**" />
+	  <Compile Remove="UnityProject\**" />
+	  <EmbeddedResource Remove="content\**" />
+	  <EmbeddedResource Remove="UnityProject\**" />
+	  <None Remove="content\**" />
+	  <None Remove="UnityProject\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <None Remove="plateup_mod_metadata.json" />
+	  <None Remove="Thumbnail.png" />
+	</ItemGroup>
+  
+	<ItemGroup>
+		<PackageReference Include="MessagePack.Annotations" Version="2.4.59" />
+		<PackageReference Include="Yariazen.PlateUp.ModBuildUtilities" Version="1.5.6" />
+	
+		<Reference Include="KitchenLib">
+			<HintPath>$(PlateUpGameFolder)\Mods\KitchenLib\content\KitchenLib-Workshop.dll</HintPath>
+		</Reference>
+
+		<Reference Include="0Harmony">
+			<HintPath>$(PlateUpGameFolder)\Mods\KitchenUnityExplorer\0Harmony.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<Target Name="BundleWorkshop" AfterTargets="Build" Condition="$(EnableModDeployLocal) == 'true'">
+		<Copy SourceFiles="$(TargetDir)$(MSBuildProjectName)-Workshop.dll" DestinationFolder="$(WorkshopDir)" />
+	</Target>
+</Project>

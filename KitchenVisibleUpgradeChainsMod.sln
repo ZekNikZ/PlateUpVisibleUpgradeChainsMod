@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitchenVisibleUpgradeChainsMod", "KitchenVisibleUpgradeChainsMod.csproj", "{611A560E-1DB2-4801-83E8-8CF484D44DBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Upload|Any CPU = Upload|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{611A560E-1DB2-4801-83E8-8CF484D44DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611A560E-1DB2-4801-83E8-8CF484D44DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611A560E-1DB2-4801-83E8-8CF484D44DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611A560E-1DB2-4801-83E8-8CF484D44DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611A560E-1DB2-4801-83E8-8CF484D44DBA}.Upload|Any CPU.ActiveCfg = Upload|Any CPU
+		{611A560E-1DB2-4801-83E8-8CF484D44DBA}.Upload|Any CPU.Build.0 = Upload|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AB31FD2-0E2C-4888-A7AA-82DC1D63C4F4}
+	EndGlobalSection
+EndGlobal
